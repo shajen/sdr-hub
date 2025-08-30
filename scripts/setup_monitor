@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export DJANGO_SUPERUSER_PASSWORD=${HTTP_PASSWORD:-password}
+
+/app/manage.py collectstatic --no-input > /dev/null
+/app/manage.py migrate > /dev/null
+/app/manage.py createsuperuser --noinput --username ${HTTP_USER:-admin} --email admin@local.local &> /dev/null || true

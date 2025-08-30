@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ "${LOG_OUTPUT_TO_FILE,,}" =~ ^(1|y|yes|t|true|ok)$ ]]; then
+    sed -i '/stdout/s/^/#/' /etc/supervisor/conf.d/supervisord.conf
+fi

@@ -1,0 +1,7 @@
+.vscode
+**/.git*
+**/*.pyc
+data
+Dockerfile
+patches
+tools

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ ! -f /app/data/config.json ]; then
+    cp /config/config.json /app/data/config.json
+fi
