@@ -18,6 +18,10 @@ Scanner use [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](
 
 Very powerful **web panel** to explore transmissions, spectrograms and configure sdr device.
 
+# YouTube
+
+Video [here](https://www.youtube.com/watch?v=YzQ2N0VkKvE), thanks to **Tech Minds**!
+
 # Screens
 
 ## Data
@@ -51,7 +55,7 @@ All collected data will be permanently saved in the local `data` directory.
 
 Default web panel address is [http://127.0.0.1:8000/](http://127.0.0.1:8000/), default login: `admin`, password: `password`.
 
-## Advanced configuration
+## Configuration
 
 Customize and save settings to `.env` file:
 
@@ -67,9 +71,26 @@ Then run by:
 docker run --rm --env-file .env -p 8000:80 -v ./data:/app/data --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
 ```
 
+# Advanced
+
 ## Debug
 
 All logs are stored in the `/var/log/sdr/` directory in the docker container. Please attach the entire directory when reporting a bug.
+
+## Update
+
+To update to the latest version just pull docker image `docker pull shajen/sdr-hub` and run again.
+
+## Build from sources
+
+Clone repository and run:
+
+```
+SDR_MONITOR_VERSION=latest # enter the selected version
+SDR_SCANNER_VERSION=latest # enter the selected version
+
+docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_VERSION --build-arg SDR_SCANNER_VERSION .
+```
 
 # Wiki
 
@@ -92,7 +113,9 @@ NOTE: Be sure to merge the **latest** from **upstream** before making a pull req
 If you enjoy this project and want to thanks, please use follow link:
 
 - [PayPal](https://www.paypal.com/donate/?hosted_button_id=6JQ963AU688QN)
+
 - [Revolut](https://revolut.me/borysm2b)
+
 - BTC address: 18UDYg9mu26K2E3U479eMvMZXPDpswR7Jn
 
 # License
