@@ -10,7 +10,7 @@ This project contains sdr scanner written in `c++` to **scan and record multiple
 
 Scanner also allows you to record multiple transmissions simultaneously (if they are transmitted on the same band). For example, if one transmission is on `145.200` MHz and the other is on `145.600 MHz`, the scanner will record and save both!
 
-Scanner use [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](https://github.com/gnuradio/gnuradio) to get data so it support all devices that are supported by `Soapy SDR`. Full list of supported devices [here](https://github.com/shajen/rtl-sdr-scanner-cpp/wiki/Supported-devices).
+Scanner use [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](https://github.com/gnuradio/gnuradio) to get data so it support all devices that are supported by `Soapy SDR`. Full list of supported devices/drivers [here](https://github.com/pothosware/SoapyOsmo/wiki).
 
 ## Web panel
 
