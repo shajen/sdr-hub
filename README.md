@@ -46,10 +46,12 @@ If you do not have `docker` installed, follow the instructions [here](https://do
 ## Run
 
 ```
-docker run --rm -p 8000:80 -v ./data:/app/data --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
+docker run --rm -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
 ```
 
-All collected data will be permanently saved in the local `data` directory.
+All collected data and config will be permanently saved in the local `data` directory.
+
+All logs will be permanently saved in the local `log` directory. Please attach the entire directory when reporting a bug.
 
 ## Web panel
 
@@ -68,14 +70,10 @@ SECRET_KEY=0123456789012345678901234567890123456789  # enter your randomly selec
 
 Then run by:
 ```
-docker run --rm --env-file .env -p 8000:80 -v ./data:/app/data --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
+docker run --rm --env-file .env -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
 ```
 
 # Advanced
-
-## Debug
-
-All logs are stored in the `/var/log/sdr/` directory in the docker container. Please attach the entire directory when reporting a bug.
 
 ## Update
 
@@ -86,8 +84,8 @@ To update to the latest version just pull docker image `docker pull shajen/sdr-h
 Clone repository and run:
 
 ```
-SDR_MONITOR_VERSION=latest # enter the selected version
-SDR_SCANNER_VERSION=latest # enter the selected version
+export SDR_MONITOR_VERSION=latest # enter the selected version
+export SDR_SCANNER_VERSION=latest # enter the selected version
 
 docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_VERSION --build-arg SDR_SCANNER_VERSION .
 ```
