@@ -26,6 +26,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           build-args: |
+            VERSION=${{ github.ref_name }}
+            COMMIT=${{ github.sha }}
             SDR_MONITOR_VERSION
             SDR_SCANNER_VERSION
           context: .
@@ -39,6 +41,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           build-args: |
+            VERSION=${{ github.ref_name }}
+            COMMIT=${{ github.sha }}
             SDR_MONITOR_VERSION
             SDR_SCANNER_VERSION
           context: .
@@ -52,6 +56,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           build-args: |
+            VERSION=${{ github.ref_name }}
+            COMMIT=${{ github.sha }}
             SDR_MONITOR_VERSION
             SDR_SCANNER_VERSION
           context: .

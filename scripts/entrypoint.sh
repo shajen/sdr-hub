@@ -1,11 +1,14 @@
 #!/bin/bash
+LOG_FILE=/var/log/sdr/startup.log
 set -e
 
-echo "Running setup..."
-setup_broker
-setup_data
-setup_monitor
-setup_supervisor
+echo "Details" | tee -a $LOG_FILE
+print_info | tee -a $LOG_FILE
 
-echo "Starting supervisor..."
-exec supervisord -n -c /etc/supervisor/conf.d/supervisord.conf
+echo "Running setup" &>>$LOG_FILE
+setup_broker &>>$LOG_FILE
+setup_data &>>$LOG_FILE
+setup_monitor &>>$LOG_FILE
+
+echo "Starting supervisor" | tee -a $LOG_FILE
+exec supervisord -c /etc/supervisor/conf.d/supervisord.conf

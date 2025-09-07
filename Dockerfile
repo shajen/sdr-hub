@@ -22,7 +22,6 @@ ENV SPECTROGRAMS_TOTAL_SIZE_GB=0
 ENV TRANSMISSIONS_TOTAL_SIZE_GB=0
 ENV SECRET_KEY=0123456789012345678901234567890123456789
 
-ENV LOG_OUTPUT_TO_FILE=true
 ENV DJANGO_SERVER_WORKERS=1
 ENV DJANGO_SERVER_THREADS=1
 
@@ -35,6 +34,7 @@ RUN apt-get update && \
     apt-get clean all && \
     rm -rf /var/lib/apt/lists/
 
+COPY --from=scanner /sdr_scanner_* /
 COPY --from=scanner /config/config.json /config/config.json
 COPY --from=scanner /usr/bin/auto_sdr /usr/bin/auto_sdr
 COPY --from=scanner /usr/bin/auto_sdr.debug /usr/bin/auto_sdr.debug
@@ -52,6 +52,13 @@ RUN ldconfig && \
     mkdir -p /var/log/sdr && \
     rm /etc/nginx/sites-enabled/default && \
     ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+ARG VERSION=""
+ARG COMMIT=""
+ARG CHANGES=""
+RUN echo "$(TZ=UTC date +"%Y-%m-%dT%H:%M:%S%z")" | tee /sdr_hub_build_time && \
+    echo "$VERSION" | tee /sdr_hub_version && \
+    echo "$COMMIT" | tee /sdr_hub_commit && \
+    echo "$CHANGES" | tee /sdr_hub_changes
 
 WORKDIR /
 EXPOSE 80

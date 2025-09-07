@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "start time:             $(date +"%Y-%m-%dT%H:%M:%S%z")"
+echo "sdr hub build time:     $(cat /sdr_hub_build_time 2>/dev/null)"
+echo "sdr monitor build time: $(cat /sdr_monitor_build_time 2>/dev/null)"
+echo "sdr scanner build time: $(cat /sdr_scanner_build_time 2>/dev/null)"
+echo "sdr hub version:        $(cat /sdr_hub_version 2>/dev/null)"
+echo "sdr monitor version:    $(cat /sdr_monitor_version 2>/dev/null)"
+echo "sdr scanner version:    $(cat /sdr_scanner_version 2>/dev/null)"
+echo "sdr hub commit:         $(cat /sdr_hub_commit 2>/dev/null)"
+echo "sdr monitor commit:     $(cat /sdr_monitor_commit 2>/dev/null)"
+echo "sdr scanner commit:     $(cat /sdr_scanner_commit 2>/dev/null)"
+echo "sdr hub changes:        $(cat /sdr_hub_changes 2>/dev/null | sed '/^$/d' | wc -l)"
+echo "sdr monitor changes:    $(cat /sdr_monitor_changes 2>/dev/null | sed '/^$/d' | wc -l)"
+echo "sdr scanner changes:    $(cat /sdr_scanner_changes 2>/dev/null | sed '/^$/d' | wc -l)"
