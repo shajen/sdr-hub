@@ -28,7 +28,7 @@ ENV DJANGO_SERVER_THREADS=1
 RUN apt-get update && \
     apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libmosquitto1 libusb-1.0-0 libfftw3-bin && \
     apt-get install -y --no-install-recommends gnuradio libsoapysdr0.8 soapysdr0.8-module-all && \
-    apt-get install -y --no-install-recommends supervisor mosquitto nginx htop nano && \
+    apt-get install -y --no-install-recommends supervisor mosquitto nginx logrotate htop nano && \
     apt-get purge -y soapysdr0.8-module-audio soapysdr0.8-module-uhd && \
     apt-get autoremove -y && \
     apt-get clean all && \
@@ -44,6 +44,7 @@ COPY --from=scanner /usr/local/lib/SoapySDR/modules0.8/libsdrPlaySupport.so /usr
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY scripts/* /usr/local/bin/
+COPY logrotate.conf /etc/logrotate.d/sdr.conf
 COPY nginx.conf /etc/nginx/sites-available/default.conf
 COPY mosquitto.conf /mosquitto/mosquitto.conf
 

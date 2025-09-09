@@ -1,0 +1,13 @@
+#!/bin/bash
+
+stop() {
+    exit 0
+}
+
+trap stop INT
+
+while true; do
+    logrotate /etc/logrotate.conf
+    sleep 600 &
+    wait
+done
