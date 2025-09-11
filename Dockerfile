@@ -24,6 +24,7 @@ ENV SECRET_KEY=0123456789012345678901234567890123456789
 
 ENV DJANGO_SERVER_WORKERS=1
 ENV DJANGO_SERVER_THREADS=1
+ENV LOG_DIR=/var/log/sdr/
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libmosquitto1 libusb-1.0-0 libfftw3-bin && \

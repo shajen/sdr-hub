@@ -51,7 +51,7 @@ docker run --rm -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /d
 
 All collected data and config will be permanently saved in the local `data` directory.
 
-All logs will be permanently saved in the local `log` directory. Please attach the entire directory when reporting a bug.
+All logs will be permanently saved in the local `log` directory.
 
 ## Web panel
 
@@ -89,6 +89,13 @@ export SDR_SCANNER_VERSION=latest # enter the selected version
 
 docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_VERSION --build-arg SDR_SCANNER_VERSION .
 ```
+## Debug
+
+All logs are stored in the `/var/log/sdr/` directory in the docker container.
+
+You can [download](http://127.0.0.1:8000/sdr/logs/) the archive with all `logs` in the `Debug` tab.
+
+Please attach the `logs` when reporting a bug. **Issues without logs will be closed quickly!**
 
 # Wiki
 
