@@ -97,6 +97,10 @@ You can [download](http://127.0.0.1:8000/sdr/logs/) the archive with all `logs` 
 
 Please attach the `logs` when reporting a bug. **Issues without logs will be closed quickly!**
 
+# Community
+
+Join our [discord server](https://discord.gg/f2cqeMh6Dh) to get help, share ideas, or contribute.
+
 # Wiki
 
 Many useful instructions and information are on the [wiki](https://github.com/shajen/sdr-hub/wiki).
