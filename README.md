@@ -1,3 +1,7 @@
+# SDR
+
+![Demo](images/demo.webp)
+
 # Introduction
 
 This project is **all in one** type, it combines two subprojects into one to allow easy launch them.
@@ -18,9 +22,19 @@ Scanner use [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](
 
 Very powerful **web panel** to explore transmissions, spectrograms and configure sdr device.
 
-# YouTube
+# Info
+
+## YouTube
 
 Video [here](https://www.youtube.com/watch?v=YzQ2N0VkKvE), thanks to **Tech Minds**!
+
+## Community
+
+Join our [discord server](https://discord.gg/f2cqeMh6Dh) to get help, share ideas, or contribute.
+
+## Wiki
+
+Many useful instructions and information are on the [wiki](https://github.com/shajen/sdr-hub/wiki).
 
 # Screens
 
@@ -97,13 +111,9 @@ You can [download](http://127.0.0.1:8000/sdr/logs/) the archive with all `logs` 
 
 Please attach the `logs` when reporting a bug. **Issues without logs will be closed quickly!**
 
-# Community
+# Disclaimer
 
-Join our [discord server](https://discord.gg/f2cqeMh6Dh) to get help, share ideas, or contribute.
-
-# Wiki
-
-Many useful instructions and information are on the [wiki](https://github.com/shajen/sdr-hub/wiki).
+This software may receive and record radio signals. Use it legally — the authors take no responsibility for misuse or unlawful recording.
 
 # Contributing
 
