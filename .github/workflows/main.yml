@@ -2,7 +2,7 @@ on: push
 
 env:
   IMAGE: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}
-  PLATFORMS: linux/arm64/v8,linux/amd64
+  PLATFORMS: linux/arm/v7,linux/arm64/v8,linux/amd64
   CACHE_FROM: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:cache
   CACHE_TO: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.event.repository.name }}:cache,mode=max
 

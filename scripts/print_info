@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "start time:             $(date +"%Y-%m-%dT%H:%M:%S%z")"
+echo "architecture:           $(dpkg --print-architecture)"
 echo "sdr hub build time:     $(cat /sdr_hub_build_time 2>/dev/null)"
 echo "sdr monitor build time: $(cat /sdr_monitor_build_time 2>/dev/null)"
 echo "sdr scanner build time: $(cat /sdr_scanner_build_time 2>/dev/null)"
