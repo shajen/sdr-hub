@@ -98,10 +98,10 @@ To update to the latest version just pull docker image `docker pull shajen/sdr-h
 Clone repository and run:
 
 ```
-export SDR_MONITOR_VERSION=latest # enter the selected version
-export SDR_SCANNER_VERSION=latest # enter the selected version
+export SDR_MONITOR_IMAGE=shajen/sdr-monitor:latest # enter the selected image
+export SDR_SCANNER_IMAGE=shajen/sdr-scanner:latest # enter the selected image
 
-docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_VERSION --build-arg SDR_SCANNER_VERSION .
+docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_IMAGE --build-arg SDR_SCANNER_IMAGE .
 ```
 ## Debug
 

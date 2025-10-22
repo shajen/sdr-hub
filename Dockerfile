@@ -1,8 +1,8 @@
-ARG SDR_MONITOR_VERSION="latest"
-ARG SDR_SCANNER_VERSION="latest"
+ARG SDR_MONITOR_IMAGE="shajen/sdr-monitor:latest"
+ARG SDR_SCANNER_IMAGE="shajen/sdr-scanner:latest"
 
-FROM shajen/sdr-monitor:${SDR_MONITOR_VERSION} AS monitor
-FROM shajen/sdr-scanner:${SDR_SCANNER_VERSION} AS scanner
+FROM ${SDR_MONITOR_IMAGE} AS monitor
+FROM ${SDR_SCANNER_IMAGE} AS scanner
 
 FROM monitor
 

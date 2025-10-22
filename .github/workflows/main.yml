@@ -34,8 +34,8 @@ jobs:
           build-args: |
             VERSION=${{ github.ref_name }}
             COMMIT=${{ github.sha }}
-            SDR_MONITOR_VERSION
-            SDR_SCANNER_VERSION
+            SDR_MONITOR_IMAGE
+            SDR_SCANNER_IMAGE
           context: .
           load: true
           tags: ${{ env.IMAGE }}:test
@@ -48,8 +48,8 @@ jobs:
           build-args: |
             VERSION=${{ github.ref_name }}
             COMMIT=${{ github.sha }}
-            SDR_MONITOR_VERSION
-            SDR_SCANNER_VERSION
+            SDR_MONITOR_IMAGE
+            SDR_SCANNER_IMAGE
           context: .
           push: true
           platforms: ${{ env.PLATFORMS }}
@@ -63,8 +63,8 @@ jobs:
           build-args: |
             VERSION=${{ github.ref_name }}
             COMMIT=${{ github.sha }}
-            SDR_MONITOR_VERSION
-            SDR_SCANNER_VERSION
+            SDR_MONITOR_IMAGE
+            SDR_SCANNER_IMAGE
           context: .
           push: true
           platforms: ${{ env.PLATFORMS }}
