@@ -40,7 +40,6 @@ jobs:
           load: true
           tags: ${{ env.IMAGE }}:test
           cache-from: ${{ env.CACHE_FROM }}
-          cache-to: ${{ env.CACHE_TO }}
       - name: Push development version
         if: ${{ github.ref_type == 'branch' && contains(vars.CI_BRANCH, github.ref_name) }}
         uses: docker/build-push-action@v6
