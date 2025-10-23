@@ -76,11 +76,18 @@ Default web panel address is [http://127.0.0.1:8000/](http://127.0.0.1:8000/), d
 Customize and save settings to `.env` file:
 
 ```
-TZ=Europe/Warsaw                                     # enter your time zone
-SPECTROGRAMS_TOTAL_SIZE_GB=20                        # keep only the last n GB of spectrograms, 0 for unlimited
-TRANSMISSIONS_TOTAL_SIZE_GB=20                       # keep only the last n GB of transmissions, 0 for unlimited
-SECRET_KEY=0123456789012345678901234567890123456789  # enter your randomly selected key
+TZ=Europe/Warsaw
+SPECTROGRAMS_TOTAL_SIZE_GB=20
+TRANSMISSIONS_TOTAL_SIZE_GB=20
+SECRET_KEY=0123456789012345678901234567890123456789
 ```
+
+where:
+
+- `TZ` - your time zone
+- `SPECTROGRAMS_TOTAL_SIZE_GB` - keep only the last n GB of spectrograms, 0 for unlimited
+- `TRANSMISSIONS_TOTAL_SIZE_GB` - keep only the last n GB of transmissions, 0 for unlimited
+- `SECRET_KEY` - enter your randomly selected key
 
 Then run by:
 ```
