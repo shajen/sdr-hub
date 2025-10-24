@@ -44,11 +44,11 @@ COPY --from=scanner /usr/local/bin/sdrplay_apiService /usr/local/bin/
 COPY --from=scanner /usr/local/lib/libsdrplay_api.so* /usr/local/lib/
 COPY --from=scanner /usr/local/lib/SoapySDR/modules0.8/libsdrPlaySupport.so /usr/local/lib/SoapySDR/modules0.8/
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY scripts/* /usr/local/bin/
-COPY logrotate.conf /etc/logrotate.d/sdr.conf
-COPY nginx.conf /etc/nginx/sites-available/default.conf
-COPY mosquitto.conf /mosquitto/mosquitto.conf
+COPY config/logrotate.conf /etc/logrotate.d/sdr.conf
+COPY config/nginx.conf /etc/nginx/sites-available/default.conf
+COPY config/mosquitto.conf /mosquitto/mosquitto.conf
 
 RUN ldconfig && \
     mkdir -p /data && \
