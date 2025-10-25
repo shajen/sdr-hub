@@ -2,5 +2,5 @@
 
 if [ ! -f /app/data/config.json ]; then
     echo "Not found /app/data/config.json - copying default"
-    cp /config/config.json /app/data/config.json
+    cp /config/config.example.json /app/data/config.json
 fi
