@@ -3,5 +3,6 @@
 **/*.pyc
 data
 Dockerfile
+log
 patches
 tools
