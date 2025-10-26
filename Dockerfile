@@ -8,12 +8,10 @@ FROM monitor
 
 ENV TZ=UTC
 
-ENV MQTT_HOST=127.0.0.1
-ENV MQTT_PORT_TCP=1883
-ENV MQTT_PORT_WS=9001
+ENV MQTT_URL=ws://127.0.0.1:9001/
 ENV MQTT_USER=admin
 ENV MQTT_PASSWORD=password
-ENV MQTT_PATH=/mqtt/
+ENV MQTT_FRONTEND_PATH=/mqtt/
 
 ENV HTTP_USER=admin
 ENV HTTP_PASSWORD=password
@@ -28,7 +26,7 @@ ENV DJANGO_SERVER_THREADS=1
 ENV LOG_DIR=/var/log/sdr/
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libmosquitto1 libusb-1.0-0 libfftw3-bin && \
+    apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libpaho-mqtt1.3 libpaho-mqttpp3-1 libusb-1.0-0 libfftw3-bin && \
     apt-get install -y --no-install-recommends gnuradio libsoapysdr0.8 soapysdr0.8-module-all && \
     apt-get install -y --no-install-recommends supervisor mosquitto nginx logrotate htop nano && \
     apt-get purge -y soapysdr0.8-module-audio soapysdr0.8-module-uhd && \
