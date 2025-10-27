@@ -1,4 +1,5 @@
 #!/bin/bash
+
 LOG_FILE=/var/log/sdr/startup.log
 set -e
 
@@ -12,4 +13,4 @@ setup_monitor &>>$LOG_FILE
 setup_supervisor &>>$LOG_FILE
 
 echo "Starting supervisor" | tee -a $LOG_FILE
-exec supervisord -c /etc/supervisor/conf.d/supervisord.conf
+supervisord -c /etc/supervisor/conf.d/supervisord.conf

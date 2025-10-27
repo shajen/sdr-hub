@@ -45,14 +45,21 @@ COPY --from=scanner /usr/local/lib/SoapySDR/modules0.8/libsdrPlaySupport.so /usr
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY scripts/* /usr/local/bin/
 COPY config/logrotate.conf /etc/logrotate.d/sdr.conf
-COPY config/nginx.conf /etc/nginx/sites-available/default.conf
+COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/mosquitto.conf /mosquitto/mosquitto.conf
+COPY entrypoint/* /entrypoint/
 
 RUN ldconfig && \
     mkdir -p /data && \
     mkdir -p /var/log/sdr && \
     rm /etc/nginx/sites-enabled/default && \
     ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
+RUN mkdir -p /var/run/sdr && \
+    chown -R ubuntu:ubuntu /etc/supervisor/conf.d/ && \
+    chown -R ubuntu:ubuntu /mosquitto/ && \
+    chown -R ubuntu:ubuntu /var/lib/nginx/ && \
+    chown -R ubuntu:ubuntu /var/log/sdr/ && \
+    chown -R ubuntu:ubuntu /var/run/sdr/
 ARG VERSION=""
 ARG COMMIT=""
 ARG CHANGES=""
@@ -63,4 +70,4 @@ RUN echo "$(TZ=UTC date +"%Y-%m-%dT%H:%M:%S%z")" | tee /sdr_hub_build_time && \
 
 WORKDIR /
 EXPOSE 80
-CMD ["/usr/local/bin/entrypoint.sh"]
+CMD ["/entrypoint/entrypoint.sh"]
