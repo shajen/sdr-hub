@@ -24,6 +24,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Update .sdr_versions
+        if: ${{ github.ref_type == 'branch' && contains(vars.CI_BRANCH, github.ref_name) }}
+        run: |
+          sed -i .sdr_versions -e "s/sdr-monitor:.*/sdr-monitor:${{ github.ref_name }}/g"
+          sed -i .sdr_versions -e "s/sdr-scanner:.*/sdr-scanner:${{ github.ref_name }}/g"
       - name: Load .sdr_versions file
         uses: aarcangeli/load-dotenv@v1
         with:
