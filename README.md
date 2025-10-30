@@ -1,6 +1,28 @@
-# SDR
-
 ![Demo](images/demo.webp)
+
+- [Introduction](#introduction)
+  - [Scanner](#scanner)
+  - [Web panel](#web-panel)
+- [Info](#info)
+  - [YouTube](#youtube)
+  - [Community](#community)
+  - [Wiki](#wiki)
+- [Screens](#screens)
+  - [Data](#data)
+  - [Configuration](#configuration)
+- [Quickstart](#quickstart)
+  - [Install docker](#install-docker)
+  - [Run](#run)
+  - [Web panel](#web-panel-1)
+  - [Configuration](#configuration-1)
+- [Advanced](#advanced)
+  - [Update](#update)
+  - [Build from sources](#build-from-sources)
+  - [Debug](#debug)
+- [Disclaimer](#disclaimer)
+- [Contributing](#contributing)
+- [Donations](#donations)
+- [License](#license)
 
 # Introduction
 
@@ -40,15 +62,15 @@ Many useful instructions and information are on the [wiki](https://github.com/sh
 
 ## Data
 
-| Spectrogram | Transmission |
-| - | - |
+| Spectrogram                        | Transmission                        |
+| ---------------------------------- | ----------------------------------- |
 | ![](images/spectrograms.png?raw=1) | ![](images/transmissions.png?raw=1) |
-| ![](images/spectrogram.png?raw=1) | ![](images/transmission.png?raw=1) |
+| ![](images/spectrogram.png?raw=1)  | ![](images/transmission.png?raw=1)  |
 
 ## Configuration
 
-| Scanner | Groups |
-| - | - |
+| Scanner                      | Groups                       |
+| ---------------------------- | ---------------------------- |
 | ![](images/config.png?raw=1) | ![](images/groups.png?raw=1) |
 
 # Quickstart
