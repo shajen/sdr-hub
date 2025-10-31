@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ID_FILE="/var/run/sdr/sdr-scanner-id"
+if [ ! -f "$ID_FILE" ]; then
+    echo "Not found scanner ID file - generating a new"
+    openssl rand -hex 16 >$ID_FILE
+fi
