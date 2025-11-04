@@ -35,7 +35,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/
 
 COPY --from=scanner /sdr_scanner_* /
-COPY --from=scanner /config/config.example.json /config/
 COPY --from=scanner /usr/bin/auto_sdr /usr/bin/auto_sdr
 COPY --from=scanner /usr/bin/auto_sdr.debug /usr/bin/auto_sdr.debug
 COPY --from=scanner /usr/local/bin/sdrplay_apiService /usr/local/bin/
