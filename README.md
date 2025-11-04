@@ -3,6 +3,11 @@
 - [Introduction](#introduction)
   - [Scanner](#scanner)
   - [Web panel](#web-panel)
+- [Features](#features)
+  - [Multi-Band Recording](#multi-band-recording)
+  - [AI-Powered Audio Tagging](#ai-powered-audio-tagging)
+  - [Satellite Tracking](#satellite-tracking)
+  - [Scheduled Recording with Crontab](#scheduled-recording-with-crontab)
 - [Info](#info)
   - [YouTube](#youtube)
   - [Community](#community)
@@ -30,19 +35,37 @@ This project is **all in one** type, it combines two subprojects into one to all
 
 ## Scanner
 
-[https://github.com/shajen/rtl-sdr-scanner-cpp](https://github.com/shajen/rtl-sdr-scanner-cpp)
+[sdr-scanner](https://github.com/shajen/rtl-sdr-scanner-cpp)
 
-This project contains sdr scanner written in `c++` to **scan and record multiple interesting frequencies bandwidth in the same time** (eg. `108 MHz`, `144 MHz`, `440 Mhz`,  etc). This is possible by switching quickly between frequencies bandwidth.
-
-Scanner also allows you to record multiple transmissions simultaneously (if they are transmitted on the same band). For example, if one transmission is on `145.200` MHz and the other is on `145.600 MHz`, the scanner will record and save both!
-
-Scanner use [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](https://github.com/gnuradio/gnuradio) to get data so it support all devices that are supported by `Soapy SDR`. Full list of supported devices/drivers [here](https://github.com/pothosware/SoapyOsmo/wiki).
+This project is a `C++` based SDR scanner designed to detect, record, and analyze multiple radio signals simultaneously across different frequency bands. It combines **high performance** with **flexibility**, supporting a **wide range of SDR devices** via [Soapy SDR](https://github.com/pothosware/SoapySDR) and [GNU Radio](https://github.com/gnuradio/gnuradio). Full list of supported devices/drivers [here](https://github.com/pothosware/SoapyOsmo/wiki).
 
 ## Web panel
 
-[https://github.com/shajen/sdr-monitor](https://github.com/shajen/sdr-monitor)
+[sdr-monitor](https://github.com/shajen/sdr-monitor)
 
 Very powerful **web panel** to explore transmissions, spectrograms and configure sdr device.
+
+# Features
+
+## Multi-Band Recording
+
+The scanner can **simultaneously scan and record multiple frequencies** (e.g., `108 MHz`, `144 MHz`, `440 MHz`, etc.) by rapidly switching between frequency ranges. This makes it possible to monitor wide portions of the spectrum in real time.
+
+It can also **record several transmissions within the same band** - for example, if one signal is at `145.200 MHz` and another at `145.600 MHz`, both will be automatically captured and saved. Perfect for monitoring busy amateur or public service bands.
+
+## AI-Powered Audio Tagging
+
+The scanner now includes an **AI-based audio classifier** that automatically tags your recordings - distinguishing between noise, human speech, and other signal types. The model runs entirely locally for full privacy and performance. This makes it effortless to browse, filter, and replay.
+
+## Satellite Tracking
+
+The scanner now includes **automatic satellite tracking**! Simply enter your location coordinates and an API key (from [n2y0.com](https://n2yo.com/api/)) and the scanner will fetch upcoming satellite passes over your area. When a satellite is in range, it will **automatically tune, track, and record** the transmission - no manual setup needed. Perfect for capturing real-time signals from weather satellites, ISS, and more!
+
+Keep in mind that **receiving satellite signals requires a good-quality antenna, precise radio calibration, and minimal interference** for best results. With proper setup, you can effortlessly capture real-time signals from weather satellites, the ISS, and more!
+
+## Scheduled Recording with Crontab
+
+You can now schedule automatic recordings using simple crontab-style entries. Define exact times or recurring intervals to start recording transmissions - ideal for capturing periodic signals, beacon transmissions. Once configured, the scanner handles everything automatically, so you’ll never miss an interesting signal again!
 
 # Info
 
