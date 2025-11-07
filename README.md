@@ -8,6 +8,7 @@
   - [AI-Powered Audio Tagging](#ai-powered-audio-tagging)
   - [Satellite Tracking](#satellite-tracking)
   - [Scheduled Recording with Crontab](#scheduled-recording-with-crontab)
+  - [Gain comparison](#gain-comparison)
 - [Info](#info)
   - [YouTube](#youtube)
   - [Community](#community)
@@ -66,6 +67,10 @@ Keep in mind that **receiving satellite signals requires a good-quality antenna,
 ## Scheduled Recording with Crontab
 
 You can now schedule automatic recordings using simple crontab-style entries. Define exact times or recurring intervals to start recording transmissions - ideal for capturing periodic signals, beacon transmissions. Once configured, the scanner handles everything automatically, so you’ll never miss an interesting signal again!
+
+## Gain comparison
+
+The scanner can now **automatically test all available gain settings** for your SDR device and **capture short spectrogram samples** for each configuration. These results are then displayed in a **side-by-side visual view**, making it easy to compare signal quality and noise levels across different gain values. With just one scan, you can instantly **identify the optimal gain settings** for your hardware and environment - no more tedious manual tuning.
 
 # Info
 
