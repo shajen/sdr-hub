@@ -110,8 +110,10 @@ If you do not have `docker` installed, follow the instructions [here](https://do
 ## Run
 
 ```
-docker run --rm -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
+docker run --rm -it --env TZ=Europe/Warsaw -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
 ```
+
+where `TZ=Europe/Warsaw` is your time zone
 
 All collected data and config will be permanently saved in the local `data` directory.
 
@@ -120,25 +122,6 @@ All logs will be permanently saved in the local `log` directory.
 ## Web panel
 
 Default web panel address is [http://127.0.0.1:8000/](http://127.0.0.1:8000/), default login: `admin`, password: `password`.
-
-## Configuration
-
-Customize and save settings to `.env` file:
-
-```
-TZ=Europe/Warsaw
-SECRET_KEY=0123456789012345678901234567890123456789
-```
-
-where:
-
-- `TZ` - your time zone
-- `SECRET_KEY` - enter your randomly selected key
-
-Then run by:
-```
-docker run --rm --env-file .env -p 8000:80 -v ./data:/app/data -v ./log:/var/log/sdr --device /dev/bus/usb:/dev/bus/usb shajen/sdr-hub
-```
 
 # Advanced
 

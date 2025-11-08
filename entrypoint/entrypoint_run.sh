@@ -14,5 +14,6 @@ setup_scanner &>>$LOG_FILE
 setup_supervisor &>>$LOG_FILE
 
 [ ! -n "$SDR_SCANNER_ID" ] && export SDR_SCANNER_ID="$(cat /var/run/sdr/sdr-scanner-id)"
+[ ! -n "$SECRET_KEY" ] && export SECRET_KEY="$(cat /var/run/sdr/sdr-monitor-secret-key)"
 echo "Starting supervisor" | tee -a $LOG_FILE
 supervisord -c /etc/supervisor/conf.d/supervisord.conf

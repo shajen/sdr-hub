@@ -1,5 +1,11 @@
 #!/bin/bash
 
+SECRET_KEY_FILE="/var/run/sdr/sdr-monitor-secret-key"
+if [ ! -f "$SECRET_KEY_FILE" ]; then
+    echo "Not found secret key file - generating a new"
+    openssl rand -hex 32 >$SECRET_KEY_FILE
+fi
+
 export DJANGO_SUPERUSER_PASSWORD=${HTTP_PASSWORD:-password}
 
 /app/manage.py collectstatic --no-input --clear
