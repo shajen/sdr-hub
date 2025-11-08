@@ -127,16 +127,12 @@ Customize and save settings to `.env` file:
 
 ```
 TZ=Europe/Warsaw
-SPECTROGRAMS_TOTAL_SIZE_GB=20
-TRANSMISSIONS_TOTAL_SIZE_GB=20
 SECRET_KEY=0123456789012345678901234567890123456789
 ```
 
 where:
 
 - `TZ` - your time zone
-- `SPECTROGRAMS_TOTAL_SIZE_GB` - keep only the last n GB of spectrograms, 0 for unlimited
-- `TRANSMISSIONS_TOTAL_SIZE_GB` - keep only the last n GB of transmissions, 0 for unlimited
 - `SECRET_KEY` - enter your randomly selected key
 
 Then run by:
