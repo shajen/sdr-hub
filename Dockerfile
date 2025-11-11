@@ -30,7 +30,8 @@ RUN apt-get update && \
     apt-get purge -y soapysdr0.8-module-audio soapysdr0.8-module-uhd && \
     apt-get autoremove -y && \
     apt-get clean all && \
-    rm -rf /var/lib/apt/lists/
+    rm -rf /var/lib/apt/lists/ && \
+    setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
 
 COPY --from=scanner /sdr_scanner_* /
 COPY --from=scanner /usr/bin/auto_sdr /usr/bin/auto_sdr
