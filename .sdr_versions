@@ -1,2 +1,2 @@
-SDR_MONITOR_IMAGE=shajen/sdr-monitor:2.1.1
-SDR_SCANNER_IMAGE=shajen/sdr-scanner:2.1.1
+SDR_MONITOR_IMAGE=shajen/sdr-monitor:2.2.0
+SDR_SCANNER_IMAGE=shajen/sdr-scanner:2.2.0
