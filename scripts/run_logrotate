@@ -7,7 +7,7 @@ stop() {
 trap stop INT
 
 while true; do
-    logrotate /etc/logrotate.conf
+    logrotate /etc/logrotate.d/sdr.conf
     sleep 600 &
     wait
 done

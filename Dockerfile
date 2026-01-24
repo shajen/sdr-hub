@@ -59,7 +59,8 @@ RUN mkdir -p /var/run/sdr && \
     chown -R ubuntu:ubuntu /mosquitto/ && \
     chown -R ubuntu:ubuntu /var/lib/nginx/ && \
     chown -R ubuntu:ubuntu /var/log/sdr/ && \
-    chown -R ubuntu:ubuntu /var/run/sdr/
+    chown -R ubuntu:ubuntu /var/run/sdr/ && \
+    chown -R ubuntu:ubuntu /var/lib/logrotate/
 ARG VERSION=""
 ARG COMMIT=""
 ARG CHANGES=""
