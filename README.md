@@ -141,11 +141,13 @@ docker build -t shajen/sdr-hub --build-arg SDR_MONITOR_IMAGE --build-arg SDR_SCA
 ```
 ## Debug
 
-All logs are stored in the `/var/log/sdr/` directory in the docker container.
+All logs are stored in the `/var/log/sdr/` directory in the docker container and can be downloaded [here](http://127.0.0.1:8000/sdr/logs/).
 
-You can [download](http://127.0.0.1:8000/sdr/logs/) the archive with all `logs` in the `Debug` tab.
+All data are stored in the `/app/data/` directory in the docker container and can be downloaded [here](http://127.0.0.1:8000/sdr/data/).
 
 Please attach the `logs` when reporting a bug. **Issues without logs will be closed quickly!**
+
+It's best to attach the ``logs and data`` from [here](http://127.0.0.1:8000/sdr/all/).
 
 # Disclaimer
 
