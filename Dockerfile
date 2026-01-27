@@ -27,7 +27,7 @@ ENV DUMP_RECORDING=false
 ENV SOAPY_REMOTE=0
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libpaho-mqtt1.3 libpaho-mqttpp3-1 libusb-1.0-0 libfftw3-bin && \
+    apt-get install -y --no-install-recommends gosu tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libpaho-mqtt1.3 libpaho-mqttpp3-1 libusb-1.0-0 libfftw3-bin && \
     apt-get install -y --no-install-recommends gnuradio libsoapysdr0.8 soapysdr0.8-module-all && \
     apt-get install -y --no-install-recommends supervisor mosquitto nginx logrotate htop nano && \
     apt-get purge -y soapysdr0.8-module-audio soapysdr0.8-module-uhd && \
@@ -43,7 +43,7 @@ COPY --from=scanner /usr/local/bin/sdrplay_apiService /usr/local/bin/
 COPY --from=scanner /usr/local/lib/libsdrplay_api.so* /usr/local/lib/
 COPY --from=scanner /usr/local/lib/SoapySDR/modules0.8/libsdrPlaySupport.so /usr/local/lib/SoapySDR/modules0.8/
 
-COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY config/supervisord.conf /etc/supervisor/supervisord.conf
 COPY scripts/* /usr/local/bin/
 COPY config/logrotate.conf /etc/logrotate.d/sdr.conf
 COPY config/nginx.conf /etc/nginx/nginx.conf
@@ -56,7 +56,7 @@ RUN ldconfig && \
     rm /etc/nginx/sites-enabled/default && \
     ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 RUN mkdir -p /var/run/sdr && \
-    chown -R ubuntu:ubuntu /etc/supervisor/conf.d/ && \
+    chown -R ubuntu:ubuntu /etc/supervisor/ && \
     chown -R ubuntu:ubuntu /mosquitto/ && \
     chown -R ubuntu:ubuntu /var/lib/nginx/ && \
     chown -R ubuntu:ubuntu /var/log/sdr/ && \

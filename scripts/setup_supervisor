@@ -2,8 +2,8 @@
 
 if [[ "${DEBUG_SDR_SCANNER,,}" =~ ^(t|y|1|true|yes|on)$ ]]; then
     echo "Enable auto_sdr debug mode"
-    sed 's/auto_sdr /auto_sdr.debug /g' -i /etc/supervisor/conf.d/supervisord.conf
+    sed 's/auto_sdr /auto_sdr.debug /g' -i /etc/supervisor/supervisord.conf
 else
     echo "Disable auto_sdr debug mode"
-    sed 's/auto_sdr.debug /auto_sdr /g' -i /etc/supervisor/conf.d/supervisord.conf
+    sed 's/auto_sdr.debug /auto_sdr /g' -i /etc/supervisor/supervisord.conf
 fi
