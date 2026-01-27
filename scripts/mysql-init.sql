@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS sdr;
+CREATE USER IF NOT EXISTS 'sdr'@'localhost' IDENTIFIED BY 'sdr';
+GRANT ALL PRIVILEGES ON sdr.* TO 'sdr'@'localhost';
+GRANT ALL PRIVILEGES ON mysql.* TO 'sdr'@'localhost';
+FLUSH PRIVILEGES;

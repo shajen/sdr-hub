@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function migrate_sqlite_to_mysql {
+    echo "migrating sqlite to mysql, it may take a while, please be patient"
+    /app/manage.py shell -c "from sdr.models import *; Group.objects.all().delete(); Device.objects.all().delete()"
+    env -u DATABASE_ENGINE -u DATABASE_NAME -u DATABASE_USERNAME -u DATABASE_PASSWORD -u DATABASE_HOST -u DATABASE_PORT /app/manage.py migrate
+    env -u DATABASE_ENGINE -u DATABASE_NAME -u DATABASE_USERNAME -u DATABASE_PASSWORD -u DATABASE_HOST -u DATABASE_PORT /app/manage.py dumpdata auth.user sdr --format json >/app/data/sdr_dump.json
+    cat /app/data/sdr_dump.json | /app/manage.py loaddata --format json -
+    rm /app/data/sdr_dump.json
+    rm /app/data/db.sqlite3
+}
+
+[[ -f "/app/data/db.sqlite3" && -n "$DATABASE_ENGINE" && "$DATABASE_ENGINE" != "sqlite3" ]] && migrate_sqlite_to_mysql
