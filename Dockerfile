@@ -24,6 +24,7 @@ ENV DJANGO_SERVER_THREADS=1
 ENV LOG_DIR=/var/log/sdr/
 ENV DUMP_SOURCE=false
 ENV DUMP_RECORDING=false
+ENV SOAPY_REMOTE=0
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends tzdata libspdlog1.12 libliquid1 nlohmann-json3-dev libpaho-mqtt1.3 libpaho-mqttpp3-1 libusb-1.0-0 libfftw3-bin && \
